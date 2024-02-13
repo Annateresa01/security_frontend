@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:securityapp/services/addsecapi.dart';
 
 class addsec extends StatefulWidget {
   const addsec({super.key});
@@ -14,8 +15,9 @@ class _addsecState extends State<addsec> {
   TextEditingController add4=new TextEditingController();
   TextEditingController add5=new TextEditingController();
   TextEditingController add6=new TextEditingController();
-  void addsecurity()async{
-
+  void addsecurity()async
+  {
+final response=await addsecapi().addsecurities(add1.text, add2.text, add3.text, add4.text, add5.text, add6.text);
   }
   @override
   Widget build(BuildContext context) {
