@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:securityapp/pages/addsec.dart';
 
 class seclogin extends StatefulWidget {
   const seclogin({super.key});
@@ -19,7 +20,7 @@ class _secloginState extends State<seclogin> {
               SizedBox(height: 30,),
               ElevatedButton(onPressed: ()
                   {
-
+Navigator.push(context, MaterialPageRoute(builder: (context)=>addsec()));
                   }, child: Text("ADD SECURITY")),
               SizedBox(height: 30,),
               ElevatedButton(onPressed: ()
