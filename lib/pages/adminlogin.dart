@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:securityapp/pages/menus.dart';
 import 'package:securityapp/pages/securitylogin.dart';
 
 class adminlogin extends StatefulWidget {
@@ -42,7 +43,7 @@ class _adminloginState extends State<adminlogin> {
                 getPass=n2.text;
                 if(getName=="admin"&&getPass=="12345")
                   {
-                    Navigator.push(context, MaterialPageRoute(builder: (context)=>seclogin()));
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>menus()));
                   }
 else
   {
