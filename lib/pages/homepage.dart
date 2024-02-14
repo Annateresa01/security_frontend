@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:securityapp/pages/adminlogin.dart';
+import 'package:securityapp/pages/secbtn.dart';
 import 'package:securityapp/pages/securitylogin.dart';
 
 class homepage extends StatelessWidget {
@@ -24,7 +25,7 @@ Navigator.push(context, MaterialPageRoute(builder: (context)=>adminlogin()));
               SizedBox(height: 30,),
               ElevatedButton(onPressed: ()
               {
-
+Navigator.push(context, MaterialPageRoute(builder: (context)=>secbtn()));
               }, child: Text("SECURITY LOGIN"))
             ],
           ),
