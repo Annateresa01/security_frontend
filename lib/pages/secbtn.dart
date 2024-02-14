@@ -17,7 +17,7 @@ class _secbtnState extends State<secbtn> {
   void loginsec()async
   {
     final response=await addsecapi().loginApi(email.text, password.text);
-    if(response["status"]=="success"){
+    if(response["status"]=="Success"){
       String userId=response["userdata"]["_id"].toString();
       print("successfuly login :"+userId);
       SharedPreferences.setMockInitialValues({});
@@ -25,7 +25,7 @@ class _secbtnState extends State<secbtn> {
       preferences.setString("userId", userId);
       Navigator.push(context, MaterialPageRoute(builder: (context)=>addvisitor()));
     }
-    else if(response["status"]=="invalid email id"){
+    else if(response["status"]=="invalid emailid"){
       print("invalid email id");
     }
     else
