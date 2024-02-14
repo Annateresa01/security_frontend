@@ -17,16 +17,17 @@ class _secbtnState extends State<secbtn> {
   void loginsec()async
   {
     final response=await addsecapi().loginApi(email.text, password.text);
-    if(response["status"]=="Success"){
+    if(response["status"]=="invalid emailid"){
+     print("invalid emailid");
+    }
+    else if(response["status"]=="Success"){
       String userId=response["userdata"]["_id"].toString();
       print("successfuly login :"+userId);
       SharedPreferences.setMockInitialValues({});
       SharedPreferences preferences=await SharedPreferences.getInstance();
       preferences.setString("userId", userId);
       Navigator.push(context, MaterialPageRoute(builder: (context)=>addvisitor()));
-    }
-    else if(response["status"]=="invalid emailid"){
-      print("invalid email id");
+      //print("invalid emailid");
     }
     else
     {
@@ -44,12 +45,16 @@ class _secbtnState extends State<secbtn> {
           child: Column(
             children: [
               SizedBox(height: 30,),
-              TextField(decoration: InputDecoration(
+              TextField(
+                controller: email,
+                decoration: InputDecoration(
                 labelText: "enter mailid",
                 border: OutlineInputBorder()
               ),),
               SizedBox(height: 30,),
-              TextField(decoration: InputDecoration(
+              TextField(
+                controller: password,
+                decoration: InputDecoration(
                   labelText: "enter password",
                   border: OutlineInputBorder()
               ),),
